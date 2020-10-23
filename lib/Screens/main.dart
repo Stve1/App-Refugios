@@ -53,7 +53,7 @@ class AfterSplash extends StatelessWidget {
         child: ListView(
           children:[
             DrawerHeader(child:
-            Image.asset('assets/images/Furry-Protected.GIF',
+            Image.network('https://upload.wikimedia.org/wikipedia/commons/2/22/Dragon_Ball_Super.png',
               fit: BoxFit.fitWidth,),
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -65,9 +65,9 @@ class AfterSplash extends StatelessWidget {
             ListTile(
             title: Row(
               children:[
-              Icon(Icons.offline_bolt,
+              Icon(Icons.account_balance,
               ),
-                Text('Refugio')
+                Text('Refugios')
             ],
           ),
             onTap: (){
@@ -76,16 +76,55 @@ class AfterSplash extends StatelessWidget {
          ListTile(
              title: Row(
                children:[
-                 Icon(Icons.photo,
+                 Icon(Icons.favorite,
                  ),
                  Text('Animales')
                ],
              ),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Eventos()),
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Animals()),
               );
             }
         ),
+            ListTile(
+                title: Row(
+                  children:[
+                    Icon(Icons.calendar_today,
+                    ),
+                    Text('Eventos')
+                  ],
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Eventos()),
+                  );
+                }
+            ),
+            ListTile(
+                title: Row(
+                  children:[
+                    Icon(Icons.lightbulb_outline,
+                    ),
+                    Text('Tips')
+                  ],
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Tips()),
+                  );
+                }
+            ),
+            ListTile(
+                title: Row(
+                  children:[
+                    Icon(Icons.business,
+                    ),
+                    Text('Veterinarias y tiendas')
+                  ],
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> VeterinariasTienda()),
+                  );
+                }
+            ),
         ]
         ),
       ),
@@ -98,7 +137,7 @@ class AfterSplash extends StatelessWidget {
     animationDuration: Duration(
     milliseconds: 200,
     ),
-    index: 1,
+    index: 2,
     animationCurve: Curves.bounceInOut,
     items: <Widget>[
     IconButton(icon: Icon(Icons.favorite, size: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
