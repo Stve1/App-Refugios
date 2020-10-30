@@ -1,6 +1,7 @@
 import 'package:app_perritos/Screens/Animals.dart';
 import 'package:app_perritos/Screens/Eventos.dart';
 import 'package:app_perritos/Screens/Veterinarias_Tienda.dart';
+import 'package:app_perritos/custom_icons.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
             fontSize: 20.0
         ),
       ),
-      image: new Image.network('https://leonidasrubio.colegiosonline.com/uploads/institucion/escudo.gif'),
+      image: new Image.asset('assets/images/Furry-Protected.gif'),
       gradientBackground: new LinearGradient(colors: [Colors.deepOrange, Colors.yellow], begin: Alignment.topLeft, end: Alignment.bottomRight),
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
@@ -53,7 +54,7 @@ class AfterSplash extends StatelessWidget {
         child: ListView(
           children:[
             DrawerHeader(child:
-            Image.network('https://upload.wikimedia.org/wikipedia/commons/2/22/Dragon_Ball_Super.png',
+            Image.asset('assets/images/Furry-Protected.gif',
               fit: BoxFit.fitWidth,),
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -76,10 +77,14 @@ class AfterSplash extends StatelessWidget {
          ListTile(
              title: Row(
                children:[
-                 Icon(Icons.favorite,
+                 Align(
+                   alignment: Alignment.bottomLeft,
+                   child: IconButton(icon: Image.asset('assets/images/Huella.png', height: 25,),
+                   onPressed: () {
+                   },),
                  ),
-                 Text('Animales')
-               ],
+                 Text('Animales'),
+           ],
              ),
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> Animals()),
@@ -140,7 +145,7 @@ class AfterSplash extends StatelessWidget {
     index: 2,
     animationCurve: Curves.bounceInOut,
     items: <Widget>[
-    IconButton(icon: Icon(Icons.favorite, size: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
+    IconButton(icon: Image.asset('assets/images/Huella.png', height: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Animals()),
