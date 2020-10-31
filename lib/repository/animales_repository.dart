@@ -12,6 +12,12 @@ class AnimalsRepository {
       photo:
           'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5c3871215bafe83b078adbe3/perro.jpg',
     ),
+    AnimalsCharacter(
+      name: 'carin',
+      age: '4',
+      race: 'cara-aplastada',
+      photo: 'https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg',
+    ),
   ];
 
   getAnimals(String name) {
@@ -27,5 +33,21 @@ class AnimalsRepository {
     //TODO ADD CODE TO DELETE A ANIMALS
   }
 
-  List<AnimalsCharacter> getAll() {}
+  List<AnimalsCharacter> getAll({String sort}) {
+    var animals = _ANIMALES.map((a) => a).toList();
+
+    if (sort != null) {
+      if (sort == 'name.asc') {
+        animals.sort(
+            (animalsA, animalsB) => animalsA.name.compareTo(animalsB.name));
+      }
+      if (sort == 'name.desc') {
+        {
+          animals.sort(
+              (animalsA, animalsB) => animalsB.name.compareTo(animalsA.name));
+        }
+      }
+      return animals;
+    }
+  }
 }

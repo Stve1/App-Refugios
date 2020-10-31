@@ -8,7 +8,7 @@ class Animals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final animals = _animalsRepository.getAll();
+    final animals = _animalsRepository.getAll(sort: 'name.asc');
 
     return Scaffold(
       appBar: AppBar(
@@ -28,8 +28,8 @@ class Animals extends StatelessWidget {
           child: ListView(
               children: animals
                   .map(
-                    (Animals) => AnimalsWidget(
-                      character: AnimalsCharacter(),
+                    (character) => AnimalsWidget(
+                      animalsCharacter: AnimalsCharacter(),
                     ),
                   )
                   .toList()),

@@ -3,9 +3,9 @@ import 'package:app_perritos/model/animales_character.dart';
 import 'package:flutter/material.dart';
 
 class AnimalsWidget extends StatelessWidget {
-  final AnimalsCharacter character;
+  final AnimalsCharacter animalsCharacter;
 
-  AnimalsWidget({this.character});
+  AnimalsWidget({this.animalsCharacter});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class AnimalsWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => DetailsAnimalScreen(
-              character: character,
+              character: animalsCharacter,
             ),
           ),
         );
@@ -43,7 +43,7 @@ class AnimalsWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                child: Image.network(character.photo),
+                child: Image.network(animalsCharacter.photo),
               ),
             ),
             Flexible(
@@ -67,7 +67,7 @@ class AnimalsWidget extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          character.name,
+                          animalsCharacter.name,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
@@ -90,7 +90,7 @@ class AnimalsWidget extends StatelessWidget {
                                   style: subTitleStyle,
                                 ),
                                 Text(
-                                  character.race,
+                                  animalsCharacter.race,
                                   style: contentStyle,
                                 ),
                               ],
@@ -103,7 +103,7 @@ class AnimalsWidget extends StatelessWidget {
                                   style: subTitleStyle,
                                 ),
                                 Text(
-                                  '${character.age}-años',
+                                  '${animalsCharacter.age}-años',
                                   style: contentStyle,
                                 ),
                               ],
