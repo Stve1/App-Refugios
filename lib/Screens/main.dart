@@ -1,12 +1,9 @@
 import 'package:app_perritos/Screens/Animals.dart';
 import 'package:app_perritos/Screens/Eventos.dart';
 import 'package:app_perritos/Screens/Veterinarias_Tienda.dart';
-import 'package:app_perritos/custom_icons.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-
-import 'Refugio.dart';
 import 'Tips.dart';
 
 void main(){
@@ -14,7 +11,6 @@ void main(){
     home: new MyApp(),
   ));
 }
-var Home = Icon(Icons.home, size: 30, color: Colors.white);
 
 class MyApp extends StatefulWidget {
   @override
@@ -34,7 +30,8 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       image: new Image.asset('assets/images/Furry-Protected.gif'),
-      gradientBackground: new LinearGradient(colors: [Colors.deepOrange, Colors.yellow], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      gradientBackground: new LinearGradient(colors: [Color.fromRGBO(181, 252, 240, 1), Color.fromRGBO(
+          201, 201, 229, 1)], begin: Alignment.topLeft, end: Alignment.bottomRight),
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
       onClick: ()=>print("Flutter Egypt"),
@@ -48,7 +45,7 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(2238, 178, 237, 1),
+        backgroundColor: Colors.lightBlueAccent,
       ),
       drawer: Drawer(
         child: ListView(
@@ -57,8 +54,8 @@ class AfterSplash extends StatelessWidget {
             Image.asset('assets/images/Furry-Protected.gif',
               fit: BoxFit.fitWidth,),
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Colors.red, Colors.yellow
+                  gradient: LinearGradient(colors: [Color.fromRGBO(181, 252, 240, 1), Color.fromRGBO(
+                      201, 201, 229, 1),
                       ]
                   )
               ),
@@ -66,7 +63,10 @@ class AfterSplash extends StatelessWidget {
             ListTile(
             title: Row(
               children:[
-              Icon(Icons.account_balance,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+                child: Icon(Icons.account_balance,
+                ),
               ),
                 Text('Refugios')
             ],
@@ -78,7 +78,7 @@ class AfterSplash extends StatelessWidget {
              title: Row(
                children:[
                  Align(
-                   alignment: Alignment.bottomLeft,
+                   alignment: Alignment(-1, -1),
                    child: IconButton(icon: Image.asset('assets/images/Huella.png', height: 25,),
                    onPressed: () {
                    },),
@@ -87,14 +87,16 @@ class AfterSplash extends StatelessWidget {
            ],
              ),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Animals()),
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context)=> Animals()),
               );
             }
         ),
             ListTile(
                 title: Row(
                   children:[
-                    Icon(Icons.calendar_today,
+                    Padding(
+                      child: Icon(Icons.calendar_today),padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
                     ),
                     Text('Eventos')
                   ],
@@ -107,7 +109,10 @@ class AfterSplash extends StatelessWidget {
             ListTile(
                 title: Row(
                   children:[
-                    Icon(Icons.lightbulb_outline,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+                      child: Icon(Icons.lightbulb_outline,
+                      ),
                     ),
                     Text('Tips')
                   ],
@@ -120,7 +125,10 @@ class AfterSplash extends StatelessWidget {
             ListTile(
                 title: Row(
                   children:[
-                    Icon(Icons.business,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+                      child: Icon(Icons.business,
+                      ),
                     ),
                     Text('Veterinarias y tiendas')
                   ],
@@ -130,12 +138,39 @@ class AfterSplash extends StatelessWidget {
                   );
                 }
             ),
-        ]
+        ListTile(
+          title: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+            child: Text('Con el patrocinio de:', style: TextStyle(fontSize: 15),
+            ),
+          ),
         ),
+        ListTile(
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+            child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Container(
+                      decoration: BoxDecoration(gradient: LinearGradient(colors: [
+                        Colors.lightBlueAccent, Color.fromRGBO(181, 252, 240, 1)
+                      ]
+                      ),
+                      ),
+                        child: Image.asset('assets/images/Ibacrea.png', height: 40,)),
+                  ),
+                  Image.asset('assets/images/Devshouse.jpg', height: 40,)
+                ]
+            ),
+          ),
+        ),
+      ],
       ),
-      backgroundColor: Color.fromRGBO(238, 178, 237, 12),
+      ),
+      backgroundColor: Color.fromRGBO(181, 252, 240, 1),
       bottomNavigationBar: CurvedNavigationBar(
-    backgroundColor: Color.fromRGBO(238, 178, 237, 210),
+    backgroundColor:  Color.fromRGBO(181, 252, 240, 1),
     color: Colors.lightBlueAccent,
     buttonBackgroundColor: Colors.lightBlueAccent,
     height: 60,
@@ -154,22 +189,41 @@ class AfterSplash extends StatelessWidget {
     IconButton(icon: Icon(Icons.calendar_today, size: 30, color: Colors.black), onPressed: (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => VeterinariasTienda()),
+        MaterialPageRoute(builder: (context) => Eventos()),
       );
     },
     ),
-      Icon(Icons.account_balance, size: 30, color: Colors.white),
-    Icon(Icons.lightbulb_outline, size: 30, color: Colors.green),
 
-    IconButton(icon: Icon(Icons.business, size: 30, color: Colors.white), onPressed: (){
+      IconButton(icon: Icon(Icons.account_balance, size: 30, color: Colors.white),
+      ),
+
+    IconButton(icon: Icon(Icons.lightbulb_outline, size: 30, color: Colors.black,), onPressed: (){
+      Navigator.push(context,
+      MaterialPageRoute(builder: (context) => Tips())
+      );
+    },
+    ),
+
+    IconButton(icon: Icon(Icons.business, size: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),
       );
-    },),
-    ],
-
+      },
     ),
+    ],
+    ),
+      body: Stack(
+        children: [
+          Center(
+            child: Container(
+              height: 23,
+              width: 23,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
