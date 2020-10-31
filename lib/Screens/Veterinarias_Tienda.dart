@@ -1,3 +1,5 @@
+import 'package:app_perritos/Widgets/Char_Tiendas.dart';
+import 'package:app_perritos/Widgets/Data_Tiendas.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -183,6 +185,7 @@ class VeterinariasTienda extends StatelessWidget{
           Icon(Icons.business, size: 30, color: Color.fromRGBO(255, 250, 91, 20)),
         ],
       ),
+      body: DataTiendas(),
     );
   }
 }
