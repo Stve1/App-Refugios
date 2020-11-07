@@ -15,8 +15,8 @@ class VeterinariasTienda extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
-      ),
+        title: Text('Furry Protected', style: TextStyle(color: Colors.white, fontSize: 20),
+      ),),
       drawer:  Drawer(
         child: ListView(
           children:[
@@ -156,7 +156,7 @@ class VeterinariasTienda extends StatelessWidget{
           IconButton(icon: Image.asset('assets/images/Huella.png', height: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Animals()),
+              MaterialPageRoute(builder: (context) => VeterinariasTienda()),
             );
           },),
           IconButton(icon: Icon(Icons.calendar_today, size: 30, color: Colors.black), onPressed: (){

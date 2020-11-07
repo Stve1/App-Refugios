@@ -1,19 +1,17 @@
-import 'package:app_perritos/Data/Tiendas.dart';
-import 'package:app_perritos/Screens/Animals.dart';
-import 'package:app_perritos/Screens/Detail_Refugio_Screen.dart';
-import 'package:app_perritos/Widgets/Char_Tiendas.dart';
+import 'package:app_perritos/Data/Evento.dart';
+import 'package:app_perritos/Widgets/Char_Evento.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DataTiendas extends StatelessWidget{
+class DataEvento extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    var Tienda1 = Tiendas(
-      name: 'Refugio Municipal',
-      photoUrl: 'https://www.elnuevodia.com.co/nuevodia/sites/default/files/styles/nota_800_x_400_/public/imagenes/2013/01/03/ibague10anota3.jpg?itok=AdAnatyr',
-      ubication: 'Km3 via Alvarado',
-      horary: '8:00- 5:00',
+    var Evento1 = Evento(
+      name: 'Jornada de Adopción',
+      photoUrl: 'https://lh3.googleusercontent.com/proxy/z6mM26D2f77mHbo6rTNr66ITiLohEFgxETr1S1yA_KCVBuDeShjmeET3oQSR3H4DnWvH88jworAcHiaL6U1YfF0B0yZ8YDd8Q71xTi4DEherZAypmPPhBNpXRhxpBgGpTvTY2Di3T2AATQw',
+      ubication: 'Colegio Sagrado Corazón',
+      horary: '9:00- 4:00',
       Estrellas: 4.4,
       colorr: Colors.grey,
       telefono: '2611855',
@@ -22,7 +20,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda2 = Tiendas(
+    var Evento2 = Evento(
       name: 'Fundación Refugio Animal',
       photoUrl: 'https://ondasdeibague.com/images/2020/10_mayo/15/perritos.jpeg',
       ubication: 'Picaleña',
@@ -35,7 +33,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.black,
     );
-    var Tienda3 = Tiendas(
+    var Evento3 = Evento(
       name: 'Moto moto',
       photoUrl: 'https://www.ambientum.com/wp-content/uploads/2020/07/perro-schafer-696x464.jpg',
       ubication: '9 meses',
@@ -48,7 +46,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda4 = Tiendas(
+    var Evento4 = Evento(
       name: 'Veterinaria Motas',
       photoUrl: 'https://i.ytimg.com/vi/_9ApW6NJ9iE/hqdefault.jpg',
       ubication: 'Et 3 Manz 32 Casa 7 Av el Jordán',
@@ -61,7 +59,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda5 = Tiendas(
+    var Evento5 = Evento(
       name: 'U.M. Veterinaria Huellas',
       photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNgK36JZkj9zMPSV3NUGjjmK-5TOQsoXFKV-OnA=s1600-w400',
       ubication: 'Cra. 6 ## 56 - 9,',
@@ -79,24 +77,25 @@ class DataTiendas extends StatelessWidget{
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          CharTiendas(
-            tiendas: Tienda1,
+          CharEvento(
+            evento: Evento1,
           ),
-          CharTiendas(
-            tiendas: Tienda2,
+          CharEvento(
+            evento: Evento2,
           ),
-          CharTiendas(
-            tiendas: Tienda3,
+          CharEvento(
+            evento: Evento3,
           ),
-          CharTiendas(
-            tiendas: Tienda4,
+          CharEvento(
+            evento: Evento4,
           ),
-          CharTiendas(
-            tiendas: Tienda5,
+          CharEvento(
+            evento: Evento5,
           ),
-
         ],
       ),
     );
+  }
+}
   }
 }

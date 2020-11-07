@@ -1,4 +1,6 @@
+import 'package:app_perritos/Data/Data_Animales.dart';
 import 'package:app_perritos/Screens/main.dart';
+import 'package:app_perritos/Widgets/Char_Animals.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +14,8 @@ class Animals extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
-      ),
+        title: Text('Furry Protected', style: TextStyle(color: Colors.white, fontSize: 20),
+      ),),
       drawer: Drawer(
       child: ListView(
       children:[
@@ -190,6 +192,7 @@ class Animals extends StatelessWidget{
         ],
 
       ),
+      body: DataAnimales(),
     );
 
   }

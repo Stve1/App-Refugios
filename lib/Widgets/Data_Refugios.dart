@@ -1,15 +1,12 @@
-import 'package:app_perritos/Data/Tiendas.dart';
-import 'package:app_perritos/Screens/Animals.dart';
-import 'package:app_perritos/Screens/Detail_Refugio_Screen.dart';
-import 'package:app_perritos/Widgets/Char_Tiendas.dart';
+import 'package:app_perritos/Data/Refugios.dart';
+import 'package:app_perritos/Widgets/Char_Refugios.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DataTiendas extends StatelessWidget{
+class DataRefugios extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    var Tienda1 = Tiendas(
+    var Refugio1 = Refugios(
       name: 'Refugio Municipal',
       photoUrl: 'https://www.elnuevodia.com.co/nuevodia/sites/default/files/styles/nota_800_x_400_/public/imagenes/2013/01/03/ibague10anota3.jpg?itok=AdAnatyr',
       ubication: 'Km3 via Alvarado',
@@ -22,7 +19,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda2 = Tiendas(
+    var Refugio2 = Refugios(
       name: 'Fundación Refugio Animal',
       photoUrl: 'https://ondasdeibague.com/images/2020/10_mayo/15/perritos.jpeg',
       ubication: 'Picaleña',
@@ -35,7 +32,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.black,
     );
-    var Tienda3 = Tiendas(
+    var Refugio3 = Refugios(
       name: 'Moto moto',
       photoUrl: 'https://www.ambientum.com/wp-content/uploads/2020/07/perro-schafer-696x464.jpg',
       ubication: '9 meses',
@@ -48,7 +45,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda4 = Tiendas(
+    var Refugio4 = Refugios(
       name: 'Veterinaria Motas',
       photoUrl: 'https://i.ytimg.com/vi/_9ApW6NJ9iE/hqdefault.jpg',
       ubication: 'Et 3 Manz 32 Casa 7 Av el Jordán',
@@ -61,7 +58,7 @@ class DataTiendas extends StatelessWidget{
       Stylecontent: TextStyle(color: Colors.white),
       TextDetail: Colors.white,
     );
-    var Tienda5 = Tiendas(
+    var Refugio5 = Refugios(
       name: 'U.M. Veterinaria Huellas',
       photoUrl: 'https://lh3.googleusercontent.com/p/AF1QipNgK36JZkj9zMPSV3NUGjjmK-5TOQsoXFKV-OnA=s1600-w400',
       ubication: 'Cra. 6 ## 56 - 9,',
@@ -79,20 +76,20 @@ class DataTiendas extends StatelessWidget{
       child: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          CharTiendas(
-            tiendas: Tienda1,
+          CharRefugios(
+            refugios: Refugio1,
           ),
-          CharTiendas(
-            tiendas: Tienda2,
+          CharRefugios(
+            refugios: Refugio2,
           ),
-          CharTiendas(
-            tiendas: Tienda3,
+          CharRefugios(
+            refugios: Refugio3,
           ),
-          CharTiendas(
-            tiendas: Tienda4,
+          CharRefugios(
+            refugios: Refugio4,
           ),
-          CharTiendas(
-            tiendas: Tienda5,
+          CharRefugios(
+            refugios: Refugio5,
           ),
 
         ],

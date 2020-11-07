@@ -1,3 +1,4 @@
+import 'package:app_perritos/Data/Data_Animales.dart';
 import 'package:app_perritos/Screens/Veterinarias_Tienda.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -190,6 +191,7 @@ class Tips extends StatelessWidget{
     ),
         ],
       ),
+      body: DataAnimales(),
     );
   }
 }

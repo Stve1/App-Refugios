@@ -13,6 +13,7 @@ class Eventos extends StatelessWidget{
 
     return  Scaffold(
       appBar: AppBar(
+        title: Text('Eventos'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       drawer: Drawer(
@@ -184,12 +185,13 @@ class Eventos extends StatelessWidget{
         IconButton(icon: Icon(Icons.business, size: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Tips()),
+            MaterialPageRoute(builder: (context) => VeterinariasTienda()),
           );
         },
         ),
       ],
     ),
+      body: ,
     );
   }
 }

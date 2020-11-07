@@ -1,14 +1,13 @@
-import 'package:app_perritos/Data/Tiendas.dart';
+import 'package:app_perritos/Data/Animales.dart';
 import 'package:app_perritos/Screens/Animals.dart';
-import 'package:app_perritos/Screens/Detail_Refugio_Screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CharTiendas extends StatelessWidget{
+class CharAnimals extends StatelessWidget {
 
-  final Tiendas tiendas;
+  final Animales animales;
 
-  CharTiendas({this.tiendas});
+  CharAnimals({this.animales});
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +19,9 @@ class CharTiendas extends StatelessWidget{
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) =>
+            builder: (context) =>
                 Animals(),
-                  ),
+          ),
         );
       },
 
@@ -41,7 +40,7 @@ class CharTiendas extends StatelessWidget{
                   Padding(
                     padding: const EdgeInsets.only(top: 1),
                     child: Image.network(
-                      tiendas.photoUrl,
+                      animales.photoUr,
                       fit: BoxFit.fitWidth,
                       height: 150,
                     ),
@@ -55,7 +54,7 @@ class CharTiendas extends StatelessWidget{
                 height: 130,
                 width: 300,
                 margin: EdgeInsets.symmetric(vertical: 5, horizontal:2),
-                decoration: BoxDecoration(borderRadius: new BorderRadius.circular(9), color: tiendas.colorr),
+                decoration: BoxDecoration(borderRadius: new BorderRadius.circular(9), color: animales.colorr),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,11 +80,11 @@ class CharTiendas extends StatelessWidget{
                             children: [
                               Text(
                                 'Nombre: ',
-                                style: tiendas.StylesubTitle,
+                                style: animales.StylesubTitle,
                               ),
                               Text(
-                                tiendas.name,
-                                style: tiendas.Stylecontent,
+                                animales.name,
+                                style: animales.Stylecontent,
                               ),
                             ],
                           ),
@@ -95,9 +94,9 @@ class CharTiendas extends StatelessWidget{
                             children: [
                               Text(
                                 'Ubicación: ',
-                                style: tiendas.StylesubTitle,
+                                style: animales.StylesubTitle,
                               ),
-                              Text(tiendas.ubication,style: tiendas.Stylecontent),
+                              Text(animales.edad,style: animales.Stylecontent),
                             ],
                           ),
                           Row(
@@ -105,11 +104,11 @@ class CharTiendas extends StatelessWidget{
                             children: [
                               Text(
                                 'Horario: ',
-                                style: tiendas.StylesubTitle,
+                                style: animales.StylesubTitle,
                               ),
                               Text(
-                                tiendas.horary,
-                                style: tiendas.Stylecontent,
+                                animales.raza,
+                                style: animales.Stylecontent,
                               ),
                             ],
                           ),
@@ -118,15 +117,28 @@ class CharTiendas extends StatelessWidget{
                             children: [
                               Text(
                                 'Telefono: ',
-                                style: tiendas.StylesubTitle,
+                                style: animales.StylesubTitle,
                               ),
                               Text(
-                                tiendas.telefono,
-                                style: tiendas.Stylecontent,
+                                animales.Refugio,
+                                style: animales.Stylecontent,
                               ),
                             ],
                           ),
 
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                'Telefono: ',
+                                style: animales.StylesubTitle,
+                              ),
+                              Text(
+                                animales.Refugio,
+                                style: animales.Stylecontent,
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),

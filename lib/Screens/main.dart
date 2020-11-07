@@ -1,6 +1,8 @@
 import 'package:app_perritos/Screens/Animals.dart';
 import 'package:app_perritos/Screens/Eventos.dart';
 import 'package:app_perritos/Screens/Veterinarias_Tienda.dart';
+import 'package:app_perritos/Widgets/Data_Refugios.dart';
+import 'package:app_perritos/Widgets/Data_Tiendas.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -45,7 +47,9 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text('Refugios',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -207,13 +211,14 @@ class AfterSplash extends StatelessWidget {
     IconButton(icon: Icon(Icons.business, size: 30, color: Color.fromRGBO(255, 250, 91, 20)), onPressed: (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Tips()),
+        MaterialPageRoute(builder: (context) => VeterinariasTienda()),
       );
       },
     ),
     ],
     ),
-      body: Stack(
+      body: DataRefugios(),
+      /*Stack(
         children: [
           Center(
             child: Container(
@@ -223,7 +228,7 @@ class AfterSplash extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      */
     );
   }
 }
