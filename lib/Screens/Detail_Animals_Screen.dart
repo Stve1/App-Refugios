@@ -34,7 +34,7 @@ class DetailsAnimalScreen extends StatelessWidget {
                 width: 10,
               ),
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(8),
               ),
               boxShadow: [
                 BoxShadow(
